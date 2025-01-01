@@ -27,8 +27,7 @@ const io = new Server(server);
 
 ///INIT
 const PORT = process.env.PORT || 3000;  
-const DB = 'mongodb+srv://sultan:1qwerty7@cluster0.aulfxyh.mongodb.net/?retryWrites=true&w=majority'
- 
+ const DB = 'mongodb+srv://exo:YGUr1RUT7YVQJ8s7@cluster0.8uffw.mongodb.net/?retryWrites=true&w=majority'
 
 ///MIDDLEWARE 
 //FOR WEB
@@ -64,13 +63,21 @@ io.on('connection', socket => {
     }); 
 })
 
-/// CONNECTION  
 mongoose.set("strictQuery", false);
 mongoose.connect(DB).then(()=>{
     console.log('Connection successful')
 }).catch(e => { 
     console.log(e);  
 });  
+
+/// CONNECTION  
+//mongoose.set("strictQuery", false);
+//mongoose.connect(DB).then(()=>{
+//    mongoose.connect('mongodb://localhost/test1').then(()=>{
+//    console.log('Connection successful')
+//}).catch(e => { 
+//    console.log(e);  
+//});  
  
 //OPEN SERVER
 server.listen(PORT, "0.0.0.0", () => {
